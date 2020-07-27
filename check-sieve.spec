@@ -20,7 +20,7 @@ Syntax checker for mail sieves.
 find src -type f -executable -exec chmod -x '{}' \;
 
 %build
-export CFLAGS="%optflags" CXXFLAGS="%optflags"
+%set_build_flags
 %make_build
 
 # XXX: enable this once https://github.com/dburkart/check-sieve/pull/36 is merged
