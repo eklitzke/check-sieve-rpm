@@ -1,6 +1,6 @@
 Name:           check-sieve
 Version:        0.6
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Syntax checker for mail sieves.
 
 License:        MIT
@@ -25,7 +25,7 @@ export CFLAGS="%optflags" CXXFLAGS="%optflags"
 
 # XXX: enable this once https://github.com/dburkart/check-sieve/pull/36 is merged
 %check
-echo make test
+make test
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -43,6 +43,9 @@ install ./docs/man1/check-sieve.1.gz %{buildroot}%{_mandir}/man1
 %{_mandir}/*
 
 %changelog
+* Mon Jul 27 2020 Evan Klitzke <evan@eklitzke.org> - 0.6-2
+- Enable "make test" checks
+
 * Mon Jul 27 2020 Evan Klitzke <evan@eklitzke.org> - 0.6-1
 - Bump for upstream version 0.6
 
